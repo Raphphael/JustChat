@@ -6,3 +6,4 @@
 - Open Terminal/Command Line and navigate to the folder(cd Foldername)
 - Get dependencies: "mix deps.get"
 - Start server: "mix phx.server"
+-	Open localhost:4000 on the machine the application is running on or join from the local network from any other device by typing in the host machines’ IP address followed by port 4000.
