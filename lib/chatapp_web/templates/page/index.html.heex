@@ -1,0 +1,88 @@
+<h1 style="color:rgb(40, 154, 244);"> JustChat</h1>
+    <h2><img src="https://cryptologos.cc/logos/chatcoin-chat-logo.png"alt="JustChat Logo" style="width:50px;height:50px;" id="pic1"></h2>
+<div id="chat-box">
+  <%= for message <- @messages do %>
+    <p><b><%= message.name %>:</b> <%= message.body %></p>
+  <% end%>
+</div>
+
+<style>
+       Body
+{
+    background-color:#222;
+    color:#EEE;
+}
+   h1 {
+            position: relative;
+            left: 55px;
+	          top: 50px;
+
+        }
+
+        h2{
+            position: relative;
+            bottom: 15px;
+        }
+        .container {
+    width: 75%;
+    margin: auto;
+}
+
+
+#chat-box {
+  border: 1px #999 solid;
+  max-height: 300px;
+  min-height: 150px;
+  overflow: scroll;
+  border-radius: 4px;
+  background-color: #000;
+}
+
+
+
+#chat-form {
+  width:300px;
+}
+
+
+
+#chat-form input[type="text"] {
+  width: 300px;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+}
+
+
+
+#chat-form textarea {
+  width: 300px;
+  height: 50px;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+}
+
+#chat-form button {
+  background-color:rgb(40, 154, 244);
+  color: white;
+  border-radius: 4px;
+}
+
+</style>
+
+<form id="chat-form">
+  <input type="text" placeholder="Username" id="user-name" required>
+  <textarea placeholder="Enter text here" id="user-msg" required></textarea>
+  <button type="submit">Send</button>
+</form>
+
+<script>
+//this one here is needed so that when the page loads in, the most recent chat messages are shown
+  var textarea = document.getElementById('chat-box');
+  textarea.scrollTop = textarea.scrollHeight;
+</script>
